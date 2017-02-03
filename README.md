@@ -2,7 +2,7 @@
 #### This JS Application give all Movements of chess Pieces in a given board
 =====
 
-* A Chess game will be 8x8 Matrix with Blacks and Whites keys
+* A Chess game will be 8x8 Matrix with Black and White keys
 * This is how a sample Board looks like,
 
 ```javascript
@@ -18,7 +18,7 @@
   
 #### Assumptions
 
-* All Uppercase Letters are Whites and Lowercase Letters are Blacks
+* All Uppercase Letters are White and Lowercase Letters are Black
 * The numbering starts from 1 -> 8 (Left -> Right)
 * Chess Game Pieces
   * R1/R2/r1/r2 => Rook
@@ -32,7 +32,7 @@
 
 #### Execution
 * Run ```node chess_movements.js``` in command line
-* The Types of Boards can be choosen by passing required index in
+* The Board type can be choose by passing required index in
 ```javascript
 let board = BOARD.getBoard(2);
 ```
@@ -66,7 +66,7 @@ mapThroughAllPieces(board, "White");
      '-> Hit End' ],
 ```
 
-* The above output will be shown in the console and there are certain terminologies used to easily explain.
+The above output will be shown in the console.
 
 #### Terminology
 
@@ -81,25 +81,25 @@ Q0:
 
 * ```'-> (1,3)-> (2,3)-> (3,3)-> Hit White colored Pawn, at (4,3) '```
 
-The above message means the White colored Queen (Uppercase Q) is moving from its current position (->) to (1,3) then to (2,3) then (3,3) and then git same colored Pawn which is located at (4,3)
+The above message means the White colored Queen (Uppercase Q) is moving from its current position (->) to (1,3) then to (2,3) then (3,3) and then hit same colored Pawn which is located at (4,3)
  
 
 * ``` '-> Hit White colored Bishop, at (0,2)' ```
 
-The above message means, the Queen had hit a white colored Bishop which is located at (0,2).
+The above message means, the Queen had hit a white colored Bishop which is located at (0,2)
 
 * ``` '-> Hit End' ```
 
-The above message means, the piece hit the wall i.e., hit the boundary of the chess board.
+The above message means, the piece hit the wall i.e., hit the boundary of the chess board
 
 =====
 
 ### Enhancements:
 
-* The above design is currently been called from Command line, it can have a webpage to easily add/change the chess piece locations.
-* En passant and Castling rules need to be applied
-* An Interface to move the keys and change the player with timer would be a good option
-* Auto creation of board to test the application
+* The above design is currently being called from Command line, it can have a webpage to easily add/change the chess piece locations.
+* En passant and Castling rules need to be applied.
+* An Interface to move the keys and change the player with timer.
+* Auto creation of board to test the application.
 
 ========
 
