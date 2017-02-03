@@ -1,0 +1,14 @@
+{
+  "R" :"Rook",
+  "B" :"Bishop",
+  "r" :"Rook",
+  "b" :"Bishop",
+  "P" :"Pawn",
+  "p" :"Pawn",
+  "KN" :"Knight",
+  "kn" :"Knight",
+  "Q" : "Queen",
+  "q" : "Queen",
+  "K" : "King",
+  "k" : "King"
+}
