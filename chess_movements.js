@@ -1,10 +1,10 @@
 let PIECE = require('./Piece');
-
-let BOARD = require('./config/tests/boards');
-
+let BOARDS = require('./config/tests/boards');
 let PIECECOLOR = require("./config/pieceColor");
-
 let PIECEDATA = require('./config/pieceData');
+
+let boards = new BOARDS();
+let pieceColor = new PIECECOLOR();
 
 let i = 0;
 let j = 0;
@@ -15,7 +15,7 @@ let mapThroughAllPieces = function (board, color) {
     if(typeof rowBased != 'undefined' && rowBased != null) {
       rowBased.map(function(columnBased) {
         if(typeof columnBased != 'undefined' && columnBased != null) {
-          if(PIECECOLOR.getColor(columnBased) === color) {
+          if(pieceColor.getColor(columnBased) === color) {
             // console.log("Piece at (" + i + ', ' + j + ') : ' + columnBased);
             let pieceInfo = PIECEDATA[columnBased];
             outputJSON[columnBased] = piece.getPossibleMovements(columnBased,i,j);
@@ -36,7 +36,7 @@ let mapThroughAllPieces = function (board, color) {
 // it would return a board by randomly selecting within the pool of boards
 // let board = BOARD.getBoard();
 
-let board = BOARD.getBoard(2);
+let board = boards.getBoard(2);
 console.log("THIS IS THE BOARD");
 console.log("\b");
 console.log(board);
@@ -44,7 +44,7 @@ console.log("\b");
 let piece = new PIECE(board);
 
 // This is where we can specify the player (White/Black)
-console.log(mapThroughAllPieces(board, "White"));
+console.log(mapThroughAllPieces(board, "Black"));
 
 // Whites: All UpperCase
 

@@ -2,46 +2,53 @@ let ALLPIECES = require('./config/AllPieces');
 let PIECEDATA = require('./config/pieceData');
 let TOOLSBOX = require('./config/toolsBox');
 
-var board = null;
+let board = null;
 
-function Piece(current_board) {
-  // pieceType = piece_type;
-  board = current_board;
-  // console.log("board", board);
-  ALLPIECES.initializeBoard(board);
-}
+let allPieces = null;
+
+let toolsBox = new TOOLSBOX();
 
 /*
   This is where the whole exection starts
 */
+function Piece(current_board) {
+  // pieceType = piece_type;
+  board = current_board;
+  allPieces = new ALLPIECES(board);
+  // console.log("board", board);
+  // ALLPIECES.initializeBoard(board);
 
-Piece.prototype.getPossibleMovements = function(pieceType, curX, curY, color) {
+  return {
+      getPossibleMovements : function(pieceType, curX, curY, color) {
 
-  pieceTypeName = TOOLSBOX.getElementName(pieceType);
+       pieceTypeName = toolsBox.getElementName(pieceType);
 
-  if(pieceTypeName == "Rook") {
-    return ALLPIECES.RookMovements(pieceType, curX, curY);
+       if(pieceTypeName == "Rook") {
+         return allPieces.RookMovements(pieceType, curX, curY);
+       }
+
+       else if(pieceTypeName == "Bishop") {
+         return allPieces.BishopMovements(pieceType, curX, curY);
+       }
+
+       else if(pieceTypeName == "King") {
+         return allPieces.KingMovements(pieceType, curX, curY);
+       }
+
+       else if(pieceTypeName == "Queen") {
+         return allPieces.QueenMovements(pieceType, curX, curY);;
+       }
+
+       else if(pieceTypeName == "Knight") {
+         return allPieces.KnightMovements(pieceType, curX, curY);
+       }
+
+       else if(pieceTypeName == "Pawn") {
+         return allPieces.PawnMovements(pieceType, curX, curY);;
+       }
+     }
   }
 
-  else if(pieceTypeName == "Bishop") {
-    return ALLPIECES.BishopMovements(pieceType, curX, curY);
-  }
-
-  else if(pieceTypeName == "King") {
-    return ALLPIECES.KingMovements(pieceType, curX, curY);
-  }
-
-  else if(pieceTypeName == "Queen") {
-    return ALLPIECES.QueenMovements(pieceType, curX, curY);;
-  }
-
-  else if(pieceTypeName == "Knight") {
-    return ALLPIECES.KnightMovements(pieceType, curX, curY);
-  }
-
-  else if(pieceTypeName == "Pawn") {
-    return ALLPIECES.PawnMovements(pieceType, curX, curY);;
-  }
 };
 
-module.exports = Piece;
+exports = module.exports = Piece;
