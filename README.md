@@ -88,6 +88,10 @@ The above message means the White colored Queen (Uppercase Q) is moving from its
 
 The above message means, the Queen had hit a white colored Bishop which is located at (0,2)
 
+* ``` '-> (1,3)-> (2,4)-> Captured Black colored Pawn at  (3,5) ' ```
+
+The above message means, the piece had captured a Black colored Pawn which is located at (3,5)
+
 * ``` '-> Hit End' ```
 
 The above message means, the piece hit the wall i.e., hit the boundary of the chess board
