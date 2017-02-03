@@ -81,16 +81,16 @@ Q0:
 
 * ```'-> (1,3)-> (2,3)-> (3,3)-> Hit White colored Pawn, at (4,3) '```
 
-The above means the White colored Queen (Uppercase Q) is moving from its current position (->) to (1,3) then to (2,3) then (3,3) and then git same colored Pawn which is located at (4,3)
+The above message means the White colored Queen (Uppercase Q) is moving from its current position (->) to (1,3) then to (2,3) then (3,3) and then git same colored Pawn which is located at (4,3)
  
 
 * ``` '-> Hit White colored Bishop, at (0,2)' ```
 
-The above means, the Queen had hit a white colored Bishop which is located at (0,2).
+The above message means, the Queen had hit a white colored Bishop which is located at (0,2).
 
 * ``` '-> Hit End' ```
 
-The above means, the piece hit the wall i.e., hit the boundary of the chess board.
+The above message means, the piece hit the wall i.e., hit the boundary of the chess board.
 
 =====
 
